@@ -1,0 +1,55 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1>🗓️ Habits</h1>
+        <h3>🎯 Targets</h3>
+      <h5>🕓 Current Targets</h5>
+      <ul>
+        <li>Keep improving actionable systems</li>
+        <li>Routine wake up and sleep time</li>
+        <li>Finish Triple Leads Prototype</li>
+        <li>Finish reading Corporate Finance</li>
+        <li>AWS cert</li>
+        <li>Join a professional association</li>
+        <li>Consistent Gym</li>
+        <li>Finish CS Lewis Book</li>
+      </ul>
+      <h5>🚀 Future Targets</h5>
+      <ul>
+        <li>Read all The Art of Computer Programming books by Knuth</li>
+        <li>Study more mathematics</li>
+        <li>Finish a DIY CS Bachelors</li>
+      </ul>
+
+      <h3>🤖 Systems</h3>
+      <h5>☀️ Wake up at 7 every day</h5>
+      <p>Only exceptions are when you go out with friends</p>
+      <p><b>Cue:</b> Alarm Clock ⏰</p>
+      <h5>🚿 Cold shower, eat, and leave the house in the morning</h5>
+      <p>Get out of the house as early as you can. This makes me twice as productive</p>
+      <p><b>Cue:</b> Immediately after waking up 🔗</p>
+      <h5>📝 First task is to plan the day</h5>
+      <p>Plan the goal for the day. Pick ONE thing. Anything else should be appointment or deadline based.</p>
+      <p><b>Cue:</b> Immediately after arriving at work spot 🔗</p>
+      <h5>🕸️ If it is a friday, write a weekly report</h5>
+      <p>This is incredibly important for accountability. Make sure to include all the work you achieved each day.</p>
+      <p><b>Cue:</b> Alarm Clock ⏰</p>
+      <h5>🍅 Pomodoro 💙</h5>
+      <p>You work way better with a timer. That and this makes sure you take breaks! Breaks are useful so you're relaxed and also so you have the energy to do an extra pomodoro session that day.</p>
+      <p><b>Cue:</b> When you are about to start working 💼</p>
+    </main>
+    <Footer />
+  </body>
+</html>

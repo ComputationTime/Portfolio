@@ -1,0 +1,51 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1>👨🏻‍💻 Andre's Website</h1>
+      <p>
+        👋 Hello there! I'm Andre, a Physics graduate from the University of
+        British Columbia with a passion for Software Engineering, Mathematics,
+        and Data Science.
+      </p>
+      <h4>What I Do 🔍</h4>
+      <h5>Software Engineering:</h5>
+
+      <p>
+        Fluent in Python and JavaScript, I specialize in creating robust and
+        efficient solutions.
+      </p>
+	  <h5>Data & Statistics:</h5>
+      <p>
+        Leveraging data to solve real-world problems is one of my strong suits.
+      </p>
+	  <h5>Teaching:</h5>
+      <p>
+        With a knack for breaking down complex concepts, I've privately taught
+        algorithms and data structures.
+      </p>
+	  <h4>Differentiator 🔬</h4>
+	  <h5>Physics Background:</h5>
+	  <p>My foundation in physics
+        offers a unique perspective in problem-solving and computational
+        thinking. </p>
+		<h5>Interdisciplinary Approach:</h5>
+		<p>I love to merge the worlds of
+			physics, computer science, and data analysis to bring innovative
+			solutions.</p>
+
+    </main>
+    <Footer />
+  </body>
+</html>

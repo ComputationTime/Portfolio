@@ -1,0 +1,92 @@
+---
+const { length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl } =
+  Astro.props;
+const paginationList = Array.from({ length }, (_, i) => i + 1);
+const month = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+const to_month_year = (num: number) => {
+  num += 7;
+  const year = Math.floor(num / 12) + 2023
+
+  return month[num%12] + " " + year;
+};
+---
+
+<nav aria-label="Blog pages" class="pagination pagination-default">
+  {
+    firstUrl == currentUrl ? (
+      <span class="pagination__link disabled">
+        <i class="pi-angle-left" />
+        <i class="pi-angle-left" />
+      </span>
+    ) : (
+      <a href={firstUrl} class="pagination__link">
+        <i class="pi-angle-left" />
+        <i class="pi-angle-left" />
+      </a>
+    )
+  }
+
+  {
+    prevUrl ? (
+      <a href={prevUrl} class="pagination__link">
+        <i class="pi-angle-left" />
+      </a>
+    ) : (
+      <span class="pagination__link disabled">
+        <i class="pi-angle-left" />
+      </span>
+    )
+  }
+
+  {
+    paginationList.map((num) => (
+      <a
+        href={`${firstUrl}${num == 1 ? "" : "/" + num}`}
+        class={`inline-block mx-2 px-3 mb-7 rounded-xl text-black no-underline bg-gray-200 outline pagination__link ${
+          currentPage == num ? "disabled active" : ""
+        }`}
+      >
+        {to_month_year(num)}
+      </a>
+    ))
+  }
+
+  {
+    !nextUrl ? (
+      <span class="pagination__link disabled">
+        <i class="pi-angle-right" />
+      </span>
+    ) : (
+      <a href={nextUrl} class="pagination__link">
+        <i class="pi-angle-right" />
+      </a>
+    )
+  }
+
+  {
+    lastUrl == currentUrl ? (
+      <span class="pagination__link disabled">
+        <i class="pi-angle-right" />
+        <i class="pi-angle-right" />
+      </span>
+    ) : (
+      <a href={lastUrl} class="pagination__link">
+        <i class="pi-angle-right" />
+        <i class="pi-angle-right" />
+      </a>
+    )
+  }
+</nav>
