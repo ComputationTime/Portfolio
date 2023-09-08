@@ -8,7 +8,7 @@ import Header from '../../components/Header.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 
 export async function getStaticPaths({ paginate }: any) {
-    const allPosts = (await getCollection('blog')).sort(
+    const allPosts = (await getCollection('blog')).filter((a)=>(a.data.published)).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
