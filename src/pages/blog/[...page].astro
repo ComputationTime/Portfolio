@@ -100,6 +100,7 @@ const firstPath = pathname[1];
 		<Header />
 		<main>
 			<section>
+				{ page.lastPage > 1 ?
                 <Pagination 
                     length={page.lastPage} 
                     currentUrl={page.url.current} 
@@ -108,7 +109,8 @@ const firstPath = pathname[1];
                     prevUrl={page.url.prev} 
                     nextUrl={page.url.next} 
                     lastUrl={`/${firstPath}/${page.lastPage}`}
-                />
+                /> : null
+				}
 				<ul>
 					{
 						page.data.map((post: any) => (
