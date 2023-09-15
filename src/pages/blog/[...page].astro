@@ -116,7 +116,7 @@ const firstPath = pathname[1];
 						page.data.map((post: any) => (
 							<li>
 								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="blog post image" />
+									<img class=" object-cover" width={720} height={360} src={post.data.heroImage} alt="blog post image" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
